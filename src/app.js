@@ -5,6 +5,7 @@ const hbs = require('hbs');
 console.log(__dirname)
 
 const app = express();
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewPath = path.join(__dirname, './components/views')
@@ -29,6 +30,6 @@ app.get('*', (req, res) => {
   res.render('404')
 });
 
-app.listen(3000, () => {
-  console.log('server is up 3000')
+app.listen(port, () => {
+  console.log('server is up' + port)
 })
